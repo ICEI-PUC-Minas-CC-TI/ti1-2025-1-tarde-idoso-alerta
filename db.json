@@ -1,0 +1,54 @@
+{
+  "noticias": [
+    {
+      "id": 1,
+      "titulo": "Campanha de vacinação contra gripe começa nesta semana",
+      "imagem": "assets/images/vacinacao.jpg",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "titulo": "Novos alertas de segurança para idosos em BH",
+      "imagem": "assets/images/alerta.jpg",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "titulo": "Evento gratuito de saúde para terceira idade no próximo sábado",
+      "imagem": "assets/images/evento.jpg",
+      "link": "#"
+    }
+  ],
+  "alertas": [
+    {
+      "id": 1,
+      "titulo": "Queda em via pública",
+      "descricao": "Idoso escorregou na calçada molhada.",
+      "detalhes": "O idoso de 78 anos caiu na Avenida Afonso Pena, próximo ao ponto de ônibus. Ambulância foi acionada por vizinhos.",
+      "local": "Avenida Afonso Pena, BH",
+      "tipo": "queda",
+      "imagem": "assets/images/alerta1.jpg",
+      "data": "20/06/2025 10:30"
+    },
+    {
+      "id": 2,
+      "titulo": "Esquecimento de medicação",
+      "descricao": "Idoso esqueceu de tomar medicação por 3 dias.",
+      "detalhes": "Familiares ajustaram a rotina e reforçaram lembretes no celular.",
+      "local": "Rua Itamarati, BH",
+      "tipo": "medicacao",
+      "imagem": "assets/images/alerta2.jpg",
+      "data": "20/06/2025 09:10"
+    },
+    {
+      "id": 3,
+      "titulo": "Desorientação em praça",
+      "descricao": "Idoso foi encontrado desorientado.",
+      "detalhes": "Sofre de Alzheimer. Foi levado ao hospital por policiais.",
+      "local": "Parque Municipal, BH",
+      "tipo": "desorientacao",
+      "imagem": "assets/images/alerta3.jpg",
+      "data": "20/06/2025 08:00"
+    }
+  ]
+}

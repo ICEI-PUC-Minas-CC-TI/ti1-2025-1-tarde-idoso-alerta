@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil | Idoso Alerta</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <style>
+    .form-box {
+      max-width: 500px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-box h2 {
+      text-align: center;
+      color: #0d6efd;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+
+    .senha-container {
+      position: relative;
+    }
+
+    .senha-container i {
+      position: absolute;
+      top: 38%;
+      right: 10px;
+      cursor: pointer;
+      color: #666;
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      background-color: #0d6efd;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0b5ed7;
+    }
+
+    .switch-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .switch-link a {
+      color: #0d6efd;
+      text-decoration: none;
+    }
+
+    .switch-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero text-center">
+  <h1 class="titulo-banner">Minha Conta</h1>
+  <p class="descricao-banner">Cadastre-se ou entre na sua conta</p>
+</header>
+
+<nav class="menu">
+  <a href="index.html">Início</a>
+  <a href="about.html">Sobre</a>
+  <a href="alertas.html">Alertas</a>
+  <a href="perfil.html">Perfil</a>
+  <a href="ajuda.html">Ajuda</a>
+  <a href="contato.html">Contato</a>
+</nav>
+
+<main>
+  <section class="form-box" id="form-container">
+    <h2 id="form-title">Cadastro</h2>
+    <form id="userForm">
+      <label for="nome" id="label-nome">Nome Completo</label>
+      <input type="text" id="nome" placeholder="Ex: João da Silva" required>
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" placeholder="Ex: joao@email.com" required>
+
+      <label for="senha">Senha</label>
+      <div class="senha-container">
+        <input type="password" id="senha" placeholder="Crie uma senha segura" required>
+        <i class="bi bi-eye-fill" onclick="toggleSenha('senha', this)"></i>
+      </div>
+
+      <div id="confirmacao-container">
+        <label for="confirmar">Confirmar Senha</label>
+        <div class="senha-container">
+          <input type="password" id="confirmar" placeholder="Digite novamente a senha" required>
+          <i class="bi bi-eye-fill" onclick="toggleSenha('confirmar', this)"></i>
+        </div>
+      </div>
+
+      <button type="submit" id="form-btn">Criar Conta</button>
+      <div class="switch-link">
+        <span id="switch-msg">Já tem uma conta? <a href="#" onclick="alternarFormulario()">Entrar</a></span>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer class="text-center py-4">
+  <p>&copy; 2025 Idoso Alerta - Todos os direitos reservados.</p>
+  <div style="margin-top: 10px;">
+    <a href="#" style="margin: 0 10px;"><i class="bi bi-envelope-fill"></i></a>
+    <a href="#" style="margin: 0 10px;"><i class="bi bi-instagram"></i></a>
+    <a href="#" style="margin: 0 10px;"><i class="bi bi-github"></i></a>
+  </div>
+</footer>
+
+<script>
+function toggleSenha(id, icone) {
+  const campo = document.getElementById(id);
+  if (campo.type === "password") {
+    campo.type = "text";
+    icone.classList.replace("bi-eye-fill", "bi-eye-slash-fill");
+  } else {
+    campo.type = "password";
+    icone.classList.replace("bi-eye-slash-fill", "bi-eye-fill");
+  }
+}
+
+let modoLogin = false;
+
+function alternarFormulario() {
+  modoLogin = !modoLogin;
+  document.getElementById("form-title").textContent = modoLogin ? "Login" : "Cadastro";
+  document.getElementById("form-btn").textContent = modoLogin ? "Entrar" : "Criar Conta";
+  document.getElementById("switch-msg").innerHTML = modoLogin
+    ? 'Não tem conta? <a href="#" onclick="alternarFormulario()">Cadastrar</a>'
+    : 'Já tem uma conta? <a href="#" onclick="alternarFormulario()">Entrar</a>';
+  document.getElementById("label-nome").style.display = modoLogin ? "none" : "block";
+  document.getElementById("nome").style.display = modoLogin ? "none" : "block";
+  document.getElementById("confirmacao-container").style.display = modoLogin ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
